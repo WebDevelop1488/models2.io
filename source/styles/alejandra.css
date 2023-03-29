@@ -1,0 +1,59 @@
+body{
+    background: linear-gradient(227deg, #000 0%, #948585 77%);
+}
+.nav-link{
+    color: rgb(168, 6, 95);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navbar-nav .nav-link.active{
+    color: rgb(190, 6, 126);
+    font-family: 'Times New Roman', Times, serif;
+}
+.navbar-brand{
+    width: 80px;
+    height:80px;
+}
+.navbar-toggler{
+    color: rgb(196, 47, 121);
+    background-color: rgb(202, 11, 122);
+}
+img{
+    width: 200px;
+    height: 400px;
+}
+.card{
+   
+    background-color: #7c4a74;
+    
+}
+.sidebar{
+background:linear-gradient( -43px 5px 10px 1px rgba(0, 0, 0, 0.64));
+    border-style: solid;
+    border-radius: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:xx-large;
+    font-weight: bolder;
+    color: rgb(100, 7, 7);
+}
+.card-text{
+   color: black
+    font-family: 'Times New Roman', Times, serif;
+}
+.card-title{
+    font-family: 'Times New Roman', Times, serif;
+font-size: xx-large;
+
+}
+.header{
+    width: 100%;
+
+    
+}
+.parallax{
+    background-image: url("https://i.pinimg.com/236x/9f/cf/2e/9fcf2e9670215093fd449fd0739747e5.jpg");
+min-height: 500px;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
