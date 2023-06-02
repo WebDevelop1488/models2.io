@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Основной сайт</title>
+  <title>Админ-панель</title>
+  <style>
+    /* Стили CSS для админ-панели */
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product-card.hidden {
+      display: none;
+    }
+
+    .product-card .out-of-stock {
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <h1>Основной сайт</h1>
+  <h1>Админ-панель</h1>
 
-  <!-- Добавляем ссылку на админ-панель -->
-  <a href="admin.html">Админ-панель</a>
+  <div id="product-list">
+    <!-- Здесь будет отображаться список товаров -->
+    <div class="product-card">
+      <h3>Товар 1</h3>
+      <p>Описание товара 1</p>
+      <button class="hide-button">Скрыть</button>
+      <button class="show-button hidden">Вернуть</button>
+      <button class="mark-out-of-stock">Нет в наличии</button>
+    </div>
+    <div class="product-card">
+      <h3>Товар 2</h3>
+      <p>Описание товара 2</p>
+      <button class="hide-button">Скрыть</button>
+      <button class="show-button hidden">Вернуть</button>
+      <button class="mark-out-of-stock">Нет в наличии</button>
+    </div>
+    <div class="product-card">
+      <h3>Товар 3</h3>
+      <p>Описание товара 3</p>
+      <button class="hide-button">Скрыть</button>
+      <button class="show-button hidden">Вернуть</button>
+      <button class="mark-out-of-stock">Нет в наличии</button>
+    </div>
+  </div>
 
-  <!-- Остальное содержимое вашего основного сайта -->
+  <script>
+    // JavaScript код для взаимодействия с админ-панелью
+
+    // Получение всех кнопок "Скрыть", "Вернуть" и "Нет в наличии"
+    const hideButtons = document.querySelectorAll('.hide-button');
+    const showButtons = document.querySelectorAll('.show-button');
+    const outOfStockButtons = document.querySelectorAll('.mark-out-of-stock');
+
+    // Обработчик события для кнопок "Скрыть"
+    hideButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        productCard.classList.add('hidden');
+        productCard.querySelector('.show-button').classList.remove('hidden');
+      });
+    });
+
+    // Обработчик события для кнопок "Вернуть"
+    showButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        productCard.classList.remove('hidden');
+        this.classList.add('hidden');
+      });
+    });
+
+    // Обработчик события для кнопок "Нет в наличии"
+    outOfStockButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const productCard = this.closest('.product-card');
+        productCard.classList.toggle('out-of-stock');
+      });
+    });
+  </script>
 </body>
 </html>
