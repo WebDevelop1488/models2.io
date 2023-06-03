@@ -1502,59 +1502,21 @@
 
     </footer>
     <script>
-        // JavaScript код для отправки запросов на сервер
-      
-        function updateProduct(productId, data) {
-          fetch(`/products/${productId}`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          })
-            .then(response => response.json())
-            .then(result => console.log(result))
-            .catch(error => console.error(error));
-        }
-      
-        // Обработчик события для кнопок "Скрыть"
-        hideButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            const productCard = this.closest('.product-card');
-            const productId = productCard.dataset.productId;
-            productCard.classList.add('hidden');
-            productCard.querySelector('.show-button').classList.remove('hidden');
-      
-            // Отправка запроса на сервер для обновления данных о карточке товара
-            updateProduct(productId, { hidden: true });
-          });
-        });
-      
-        // Обработчик события для кнопок "Вернуть"
-        showButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            const productCard = this.closest('.product-card');
-            const productId = productCard.dataset.productId;
-            productCard.classList.remove('hidden');
-            this.classList.add('hidden');
-      
-            // Отправка запроса на сервер для обновления данных о карточке товара
-            updateProduct(productId, { hidden: false });
-          });
-        });
-      
-        // Обработчик события для кнопок "Нет в наличии"
-        outOfStockButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            const productCard = this.closest('.product-card');
-            const productId = productCard.dataset.productId;
-            const isOutOfStock = !productCard.classList.contains('out-of-stock');
-            productCard.classList.toggle('out-of-stock');
-      
-            // Отправка запроса на сервер для обновления данных о карточке товара
-            updateProduct(productId, { outOfStock: isOutOfStock });
-          });
-        });
+       // Предполагая, что вы получаете список товаров с сервера и имеете массив products
+// Используйте вашу реализацию получения списка товаров здесь
+
+const productCards = document.querySelectorAll('.card');
+
+products.forEach(product => {
+  if (product.hidden) {
+    // Скрываем карточку товара
+    productCards[product.id - 1].style.display = 'none';
+  } else {
+    // Отображаем карточку товара
+    productCards[product.id - 1].style.display = 'block';
+  }
+});
+
       </script>
       
       
