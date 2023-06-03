@@ -32,3 +32,17 @@ app.post('/products/:id', (req, res) => {
 app.listen(3000, () => {
   console.log('Сервер запущен на порту 3000');
 });
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Маршрут для корневой страницы
+app.get('/', (req, res) => {
+  res.send('Привет, мир!'); // Здесь можно отправить HTML-страницу или использовать шаблонизацию
+});
+
+// Остальные маршруты и обработчики запросов
+
+app.listen(port, () => {
+  console.log(`Сервер запущен на порту ${port}`);
+});
